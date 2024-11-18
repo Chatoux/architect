@@ -1,0 +1,81 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom color palette */
+:root {
+  --color-primary: #383838;
+  --color-secondary: #F4F4F3;
+  --color-accent: #EC5C39;
+}
+
+/* Base Styles */
+body {
+  @apply bg-secondary text-primary leading-relaxed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-primary mb-4;
+}
+
+p {
+  @apply mb-6;
+}
+
+a {
+  @apply text-accent underline hover:no-underline;
+}
+
+a:focus {
+  @apply outline-none ring-2 ring-accent;
+}
+
+/* Call-to-Action Button */
+.btn-primary {
+  @apply inline-block px-4 py-2 bg-accent text-white rounded transition-colors duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-opacity-90;
+}
+
+.btn-primary:active {
+  @apply transform scale-95;
+}
+
+/* Text Colors */
+.text-primary {
+  @apply text-primary;
+}
+
+.text-secondary {
+  @apply text-secondary;
+}
+
+/* Links */
+.link-primary {
+  @apply text-accent font-medium hover:text-opacity-75 transition-colors duration-200;
+}
+
+/* Utility Classes for Spacing and Responsive Design */
+.padding-responsive {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.margin-responsive {
+  @apply m-4 sm:m-6 lg:m-8;
+}
+
+.flex-responsive {
+  @apply flex flex-col md:flex-row items-center;
+}
+
+.grid-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+/* Responsive Breakpoints */
+.container {
+  @apply max-w-screen-lg mx-auto px-4 sm:px-8;
+}

@@ -1,95 +1,126 @@
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@components/Navbar';
+import Footer from '@components/Footer';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-      </div>
+    <>
+      <Navbar />
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <main className="w-full">
+        {/* Hero Section */}
+        <section className="w-full bg-[#383838] text-[#000000] flex flex-col justify-center items-center">
+          <div className="relative w-full h-[70vh]">
+            <Image
+              src="/image-home-hero-section.jpg"
+              alt="Hero"
+              layout="fill"
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="mb-8"
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#000000]">
+                Welcome to ArchiTect
+              </h1>
+              <p className="mt-4 text-lg text-[#F4F4F3]">
+                Transforming spaces with cutting-edge architectural design.
+              </p>
+              <Link href="/portfolio">
+                <button className="bg-[#F4F4F3] text-[#EC5C39] px-4 py-2 rounded font-semibold hover:bg-[#EC5C39] hover:text-[#FFFFFF]">
+                  Explore Our Projects
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* Introduction Section */}
+        <section className="w-full bg-[#F4F4F3] text-[#000000] py-16 px-8">
+          <div className="max-w-screen-lg mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Discover the Art of Architecture
+            </h2>
+            <p className="text-lg leading-relaxed mb-8">
+              At ArchiTect, we believe in blending art with functionality. Our
+              innovative designs are a testament to our commitment to excellence
+              and sophistication.
+            </p>
+            <Link href="/about">
+              <button className="bg-[#EC5C39] text-[#FFFFFF] px-4 py-2 rounded font-semibold hover:bg-[#383838]">
+                Learn More About Us
+              </button>
+            </Link>
+          </div>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {/* Featured Projects */}
+        <section className="w-full bg-[#383838] text-[#FFFFFF] py-16 px-8">
+          <div className="max-w-screen-lg mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Featured Projects
+            </h2>
+            <p className="text-lg leading-relaxed mb-8">
+              Browse some of our most exceptional architectural projects that
+              redefine modern living.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Project 1 */}
+              <div className="bg-[#F4F4F3] p-4 rounded shadow-lg">
+                <Image
+                  src="/project1.jpg"
+                  alt="Project 1"
+                  width={300}
+                  height={200}
+                  className="mb-4"
+                />
+                <h3 className="text-xl font-semibold text-[#000000] mb-2">
+                  Luxurious Villa
+                </h3>
+                <p className="text-[#383838]">
+                  A stunning blend of luxury and sustainable design.
+                </p>
+              </div>
+              {/* Project 2 */}
+              <div className="bg-[#F4F4F3] p-4 rounded shadow-lg">
+                <Image
+                  src="/project2.jpg"
+                  alt="Project 2"
+                  width={300}
+                  height={200}
+                  className="mb-4"
+                />
+                <h3 className="text-xl font-semibold text-[#000000] mb-2">
+                  Urban Loft
+                </h3>
+                <p className="text-[#383838]">
+                  Modern elegance meets urban chic in this beautiful loft.
+                </p>
+              </div>
+              {/* Project 3 */}
+              <div className="bg-[#F4F4F3] p-4 rounded shadow-lg">
+                <Image
+                  src="/project3.jpg"
+                  alt="Project 3"
+                  width={300}
+                  height={200}
+                  className="mb-4"
+                />
+                <h3 className="text-xl font-semibold text-[#000000] mb-2">
+                  Office Tower
+                </h3>
+                <p className="text-[#383838]">
+                  Innovative workspace with cutting-edge design features.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-        <a
-          href="https://app.fleek.xyz/templates"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://app.fleek.xyz"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Footer />
+    </>
   );
 }
